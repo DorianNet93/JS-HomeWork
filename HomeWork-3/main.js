@@ -2,27 +2,28 @@ let num1 = prompt("Калькулятор: Введите первое числ�
 let operation = prompt("Калькулятор: Введите +, -, *, /");
 let num2 = prompt("Калькулятор: Введите второе число");
 
-let sum = +num1 + +num2;
-let multi = num1 * num2;
-let sub = num1 - num2;
-let div = num1 / num2;
+let result;
 
-function calc() {
-  if (operation === "+"){
-    alert(`${num1} + ${num2} = ` + sum);
+switch (operation) {
+  case "+":
+    result = +num1 + +num2;
+    break;
+    
+  case "-":
+    result = num1 - num2;
+    break;
+  
+  case "/":
+    result = num1 / num2;
+    break;
 
-  } else if (operation === "-"){
-    alert(`${num1} - ${num2} = ` + sub);
-
-  } else if (operation === "*"){
-    alert(`${num1} * ${num2} = ` + multi);
-
-  } else if (operation === "/"){
-    alert(`${num1} / ${num2} = ` + div);
-
-  } else {
+  case "*":
+    result = num1 * num2;
+    break;
+  
+  default:
     alert (`Попробуйте снова - следуя инструкции`);
     location.reload();
-  }
 }
-calc()
+
+console.log(result);
